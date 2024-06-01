@@ -1,0 +1,133 @@
+body {
+  background-color: #f9f7fe;
+  /*background-image: url(weather.png);*/
+}
+
+.container {
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  display: block;
+  margin: 45px auto;
+  padding: 10px;
+  max-width: 700px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.main {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background: radial-gradient(
+    circle at -8.9% 51.2%,
+    rgb(255, 124, 0) 0%,
+    rgb(255, 124, 0) 15.9%,
+    rgb(255, 163, 77) 15.9%,
+    rgb(255, 163, 77) 24.4%,
+    rgb(19, 30, 37) 24.5%,
+    rgb(19, 30, 37) 66%
+  );
+  font-family: "Poetsen one", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  padding: 15px 30px;
+  margin: 5px;
+  border-radius: 10px;
+  /* background-image: url(weatherAppBackground.jpeg);*/
+  color: #fff;
+}
+
+.input-city {
+  background-color: #f9f7fe;
+  border: none;
+  border-radius: 8px;
+  width: 80%;
+  font-size: 16px;
+  padding: 15px 30px;
+  margin: 5px;
+}
+
+.search-button {
+  background: linear-gradient(
+    to top,
+    rgb(9, 32, 63) 0%,
+    rgb(83, 120, 149) 100%
+  );
+  padding: 15px 30px;
+  border: none;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-left: 5px;
+  border-radius: 6px;
+  color: white;
+  transition-duration: 200ms;
+}
+.search-button:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    to top,
+    rgb(9, 32, 63, 0.8) 0%,
+    rgb(83, 120, 149, 0.8) 100%
+  );
+}
+
+form {
+  border-bottom: 1px solid #12101547;
+  padding: 0 0 15px 0;
+}
+
+.shown-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 48px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-size: 16px;
+  color: rgba(39, 33, 66, 0.4);
+  line-height: 24px;
+  font-weight: 500;
+}
+
+strong {
+  color: #f75282;
+}
+
+.icon-image {
+  width: 88px;
+  height: 88px;
+}
+.shown-temp {
+  display: flex;
+}
+
+.temperature {
+  font-size: 88px;
+  line-height: 88px;
+  font-weight: bold;
+}
+
+.unit {
+  margin-top: 6px;
+  font-size: 28px;
+}
+
+footer {
+  border-top: 1px solid #12101547;
+  padding: 15px 0 0 0;
+  text-align: center;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
