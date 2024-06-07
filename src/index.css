@@ -124,6 +124,23 @@ strong {
   font-size: 28px;
 }
 
+.weekly-weather {
+  margin-top: 20px;
+  text-align: center;
+}
+.week-day {
+  font-size: 16px;
+  color: rgba(39, 33, 66, 0.7);
+}
+.temperat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #f75282;
+}
+.coldest-temp {
+  color: rgb(247, 82, 130, 0.6);
+}
 footer {
   border-top: 1px solid #12101547;
   padding: 15px 0 0 0;
