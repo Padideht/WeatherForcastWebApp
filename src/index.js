@@ -52,6 +52,28 @@ function showDate(date) {
   return `${day} ${hours}:${minutes},`;
 }
 
+function displayWeek() {
+  //نمایش روزهای هفته و دمای هر روز با حلقه
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]; //آرایه ای از روزهای هفته
+  let forcastHtml = ""; //یک رشته خالی برای نمایش قالب آب و هوا
+
+  days.forEach(function showDay(day) {
+    forcastHtml += `
+        <div class="week-day">${day}</div>
+          <img src="#" alt="weekly weather icon" class="weekly-icon-image" />
+          <div class="temperature">
+            <div class="hotest-temp">21°</div>
+            <div class="coldest-temp">11°</div>
+        </div>
+  `;
+  });
+
+  let forcast = document.querySelector("#weekly-weather"); //انتخاب دیو مورد نظر با استفاده از آی دی
+  forcast.innerHTML = forcastHtml; // کد اچ تی ام ال آن را برابر با کدی که تولید کردیم قرار می دهیم
+}
+
 let searchingForm = document.querySelector("#search-form");
 searchingForm.addEventListener("submit", handleSearching);
 searchingEnteredCity("Berlin");
+displayWeek();
