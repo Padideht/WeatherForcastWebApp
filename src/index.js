@@ -31,6 +31,8 @@ function showWeatherInfo(response) {
                 alt="weather icon"
                 class="icon-image"
               />`;
+
+  getForcast(response.data.city);
 }
 
 function showDate(date) {
@@ -52,7 +54,14 @@ function showDate(date) {
   return `${day} ${hours}:${minutes},`;
 }
 
-function displayWeek() {
+function getForcast(city) {
+  let ApiKey = "b4b90t01e78a6d3ae3ea0adb94efof84";
+  let ApiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${ApiKey}&units=metric`;
+  axios(ApiUrl).then(displayWeek);
+}
+
+function displayWeek(response) {
+  console.log(response.data);
   //نمایش روزهای هفته و دمای هر روز با حلقه
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]; //آرایه ای از روزهای هفته
@@ -62,7 +71,7 @@ function displayWeek() {
     forcastHtml += `
         <div class="week-day">${day}</div>
           <img src="#" alt="weekly weather icon" class="weekly-icon-image" />
-          <div class="temperature">
+          <div class="min-max-temperature">
             <div class="hotest-temp">21°</div>
             <div class="coldest-temp">11°</div>
         </div>
@@ -76,4 +85,3 @@ function displayWeek() {
 let searchingForm = document.querySelector("#search-form");
 searchingForm.addEventListener("submit", handleSearching);
 searchingEnteredCity("Berlin");
-displayWeek();

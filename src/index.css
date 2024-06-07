@@ -127,7 +127,6 @@ strong {
 .weekly-weather {
   margin-top: 20px;
   text-align: center;
-  display: flex;
 }
 .week-day {
   font-size: 16px;
@@ -137,9 +136,8 @@ strong {
   width: 88px;
   height: 88px;
 }
-.temperature {
+.min-max-temperature {
   display: flex;
-  justify-content: space-between;
   font-size: 13px;
   color: #f75282;
 }
