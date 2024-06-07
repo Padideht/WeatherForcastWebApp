@@ -125,24 +125,32 @@ strong {
 }
 
 .weekly-weather {
-  margin-top: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.weather-forcast-day {
+  display: block;
+  margin: 20px 0 20px 0;
 }
 .week-day {
-  font-size: 16px;
+  text-align: center;
+  font-size: 18px;
   color: rgba(39, 33, 66, 0.7);
 }
 .weekly-icon-image {
   width: 88px;
   height: 88px;
+  display: block;
+  margin: 0 auto;
 }
 .min-max-temperature {
   display: flex;
-  font-size: 13px;
+  justify-content: space-around;
+  font-size: 15px;
   color: #f75282;
 }
 .coldest-temp {
-  color: rgb(247, 82, 130, 0.6);
+  opacity: 0.5;
 }
 footer {
   border-top: 1px solid #12101547;

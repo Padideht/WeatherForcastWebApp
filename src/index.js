@@ -61,21 +61,28 @@ function getForcast(city) {
 }
 
 function displayWeek(response) {
-  console.log(response.data);
   //نمایش روزهای هفته و دمای هر روز با حلقه
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]; //آرایه ای از روزهای هفته
   let forcastHtml = ""; //یک رشته خالی برای نمایش قالب آب و هوا
 
-  days.forEach(function showDay(day) {
+  response.data.daily.forEach(function showDay(day, index) {
+    // به جای روز از ریسپانس استفاده می کنیم تا داده های مورد نظر را از ای پی آی فراخوانی کنیم
     forcastHtml += `
-        <div class="week-day">${day}</div>
-          <img src="#" alt="weekly weather icon" class="weekly-icon-image" />
+    <div class="weather-forcast-day">
+        <div class="week-day">Fri</div>
+          <img src="${
+            day.condition.icon_url
+          }" alt="weekly weather icon" class="weekly-icon-image" />
           <div class="min-max-temperature">
-            <div class="hotest-temp">21°</div>
-            <div class="coldest-temp">11°</div>
+            <div class="hotest-temp"><strong>${Math.round(
+              day.temperature.maximum
+            )}°</strong></div>
+            <div class="coldest-temp"><strong>${Math.round(
+              day.temperature.minimum
+            )}°</strong></div>
         </div>
-  `;
+        </div>`;
   });
 
   let forcast = document.querySelector("#weekly-weather"); //انتخاب دیو مورد نظر با استفاده از آی دی
