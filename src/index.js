@@ -60,17 +60,23 @@ function getForcast(city) {
   axios(ApiUrl).then(displayWeek);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]; //آرایه ای از روزهای هفته
+  return days[date.getDay()];
+}
+
 function displayWeek(response) {
   //نمایش روزهای هفته و دمای هر روز با حلقه
 
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]; //آرایه ای از روزهای هفته
   let forcastHtml = ""; //یک رشته خالی برای نمایش قالب آب و هوا
 
   response.data.daily.forEach(function showDay(day, index) {
     // به جای روز از ریسپانس استفاده می کنیم تا داده های مورد نظر را از ای پی آی فراخوانی کنیم
-    forcastHtml += `
+    if (index < 7) {
+      forcastHtml += `
     <div class="weather-forcast-day">
-        <div class="week-day">Fri</div>
+        <div class="week-day">${formatDay(day.time)}</div>
           <img src="${
             day.condition.icon_url
           }" alt="weekly weather icon" class="weekly-icon-image" />
@@ -83,6 +89,7 @@ function displayWeek(response) {
             )}°</strong></div>
         </div>
         </div>`;
+    }
   });
 
   let forcast = document.querySelector("#weekly-weather"); //انتخاب دیو مورد نظر با استفاده از آی دی
